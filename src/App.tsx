@@ -11,7 +11,7 @@ import ContactThanks from './pages/contact/thanks';
 
 export default function App() {
   return (
-    <BrowserRouter basename="/lab/gtm-demo/">
+    <BrowserRouter basename="/lab/gtm-demo">
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
