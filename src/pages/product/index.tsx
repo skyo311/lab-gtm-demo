@@ -3,20 +3,12 @@ import { Container, Typography, Box, Paper } from '@mui/material';
 export default function Product() {
   return (
     <>
-      <title>機能詳細 | WorkBase（ワークベース）</title>
+      <title>プロダクト | Tracking Lab | タスク管理</title>
       <meta
         name="description"
-        content="WorkBaseの機能詳細。AIタスク自動生成や外部ツール連携など、業務効率化を支援する主要な機能をご紹介します。"
+        content="プロダクトのディスクリプションが入ります。"
       />
-
-      {/* GTMのカスタムデータ属性は、Container（実体はdiv）にそのまま付与できます。
-        これで「product_details」のページビュー計測もバッチリ機能します。
-      */}
-      <Container
-        maxWidth="md"
-        sx={{ py: 8 }}
-        data-gtm-pageview="product_details"
-      >
+      <Container maxWidth="md" sx={{ py: 8 }}>
         <Typography
           variant="h4"
           component="h1"
@@ -24,12 +16,10 @@ export default function Product() {
           gutterBottom
           sx={{ mb: 6 }}
         >
-          機能詳細
+          プロダクト
         </Typography>
 
-        {/* 機能ブロックを縦に並べるラッパー */}
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-          {/* 機能1: AIタスク自動生成 */}
           <Paper
             elevation={0}
             sx={{ p: 4, bgcolor: 'grey.50', borderRadius: 2 }}
@@ -40,7 +30,7 @@ export default function Product() {
               fontWeight="bold"
               gutterBottom
             >
-              AIタスク自動生成
+              ① タスク自動生成
             </Typography>
             <Typography
               variant="body1"
@@ -62,7 +52,7 @@ export default function Product() {
               fontWeight="bold"
               gutterBottom
             >
-              外部ツール連携
+              ② 外部ツール連携
             </Typography>
             <Typography
               variant="body1"

@@ -5,17 +5,15 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 export default function TrialThanks() {
   return (
     <>
-      <title>登録完了 | WorkBase（ワークベース）</title>
+      <title>登録完了 | Tracking Lab | タスク管理</title>
       <meta
         name="description"
-        content="無料トライアルの登録が完了しました。すぐにWorkBaseをご利用いただけます。"
+        content="無料トライアルプランの登録が完了しました。すぐにTracking Labをご利用いただけます。"
       />
 
       <Container maxWidth="sm" sx={{ py: 12, textAlign: 'center' }}>
-        {/* トライアル登録完了（セグメント1）の最終CV計測用ノード */}
-        <div data-gtm-cv="sign_up" style={{ display: 'none' }} />
+        <div data-gtm-view="trial_finish_lead" style={{ display: 'none' }} />
 
-        {/* トライアルの「すぐ始められる感」を出すため、色は爽やかなprimary（青系）に */}
         <CheckCircleOutlineIcon color="primary" sx={{ fontSize: 80, mb: 2 }} />
 
         <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>

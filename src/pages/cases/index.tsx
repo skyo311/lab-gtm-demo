@@ -1,83 +1,144 @@
-import { Box, Container, Typography, Paper, Button } from '@mui/material';
-import DownloadIcon from '@mui/icons-material/Download'; // MUIのアイコンを追加
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardActionArea,
+  CardContent,
+  Paper,
+  Button,
+} from '@mui/material';
+import { grey } from '@mui/material/colors';
+import BusinessIcon from '@mui/icons-material/Business';
+import DownloadIcon from '@mui/icons-material/Download';
+import { useNavigate } from 'react-router-dom';
+import { COMPANIES } from '../../data/companies';
 
 export default function Cases() {
+  const navigate = useNavigate();
+
   return (
     <>
-      {/* タイトルとディスクリプションを「導入事例」用に修正！ */}
-      <title>導入事例 | WorkBase（ワークベース）</title>
+      <title>導入事例 | Tracking Lab | タスク管理</title>
       <meta
         name="description"
-        content="WorkBaseを導入して業務効率化を実現した企業の業界別ケーススタディや、お役立ち資料をご紹介します。"
+        content="導入事例のディスクリプションが入ります。"
       />
-
-      {/* 画面中央寄せのコンテナ */}
-      <Container maxWidth="md" sx={{ py: 8 }}>
-        <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>
-          導入事例・リソース
-        </Typography>
-
-        {/* 企業ロゴの視認計測 */}
-        <Box
-          component="section"
-          data-gtm-visibility="case_logos"
-          sx={{ mt: 6 }}
-        >
+      <Box sx={{ bgcolor: 'background.default', color: 'text.primary' }}>
+        <Container maxWidth="lg" sx={{ py: 10 }}>
           <Typography
-            variant="h5"
-            component="h2"
+            variant="h4"
+            component="h1"
             fontWeight="bold"
             gutterBottom
           >
-            業界別ケーススタディ
-          </Typography>
-          <Box sx={{ fontSize: '3rem', letterSpacing: '1rem' }}>🏢 🏦 🏥</Box>
-        </Box>
-
-        {/* PDFダウンロード計測（高確度リード予兆） */}
-        <Paper
-          component="section"
-          elevation={0} // 影を消してフラットに
-          sx={{
-            mt: 8,
-            p: 4,
-            bgcolor: '#e0f2fe', // 元の薄いブルーを維持
-            borderRadius: 2,
-          }}
-        >
-          <Typography
-            variant="h5"
-            component="h2"
-            fontWeight="bold"
-            gutterBottom
-          >
-            お役立ち資料
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
-            具体的な導入ステップや費用対効果をまとめた資料を無料でダウンロードいただけます。
+            導入事例・リソース
           </Typography>
 
-          {/* テキストリンクから、クリックしやすい大きなボタンに変更 */}
-          <Button
-            component="a"
-            href="/whitepaper.pdf"
-            download
-            data-gtm-click="file_download_whitepaper"
-            variant="contained"
-            disableElevation
-            startIcon={<DownloadIcon />} // ダウンロードアイコンを付与
+          {/* 1. 導入企業事例セクション（4カラム） */}
+          <Box component="section" sx={{ mt: 8 }}>
+            <Typography
+              variant="h5"
+              component="h2"
+              fontWeight="bold"
+              sx={{ mb: 4 }}
+            >
+              企業別ケーススタディ
+            </Typography>
+
+            <Grid container spacing={3}>
+              {COMPANIES.map((company) => (
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} key={company.id}>
+                  <Card
+                    variant="outlined"
+                    sx={{
+                      height: '100%',
+                      borderRadius: 2,
+                      borderColor: 'divider',
+                      '&:hover': { bgcolor: grey[50] },
+                    }}
+                  >
+                    <CardActionArea
+                      onClick={() => navigate(`/cases/${company.id}`)}
+                      data-gtm-click={`case_card_${company.name}`} // 個別企業クリック計測
+                    >
+                      <CardContent sx={{ textAlign: 'center', py: 4 }}>
+                        <BusinessIcon
+                          sx={{ fontSize: 40, color: 'grey.400', mb: 2 }}
+                        />
+                        <Typography
+                          variant="subtitle1"
+                          fontWeight="bold"
+                          gutterBottom
+                        >
+                          {company.name}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {company.body}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+
+          {/* 2. お役立ち資料セクション（高確度リード獲得用） */}
+          <Paper
+            component="section"
+            variant="outlined"
             sx={{
-              bgcolor: '#0284c7',
-              fontWeight: 'bold',
-              py: 1.5,
-              px: 3,
-              '&:hover': { bgcolor: '#0369a1' }, // ホバー時は少し濃くする
+              mt: 10,
+              p: 6,
+              bgcolor: grey[50],
+              borderRadius: 3,
+              textAlign: 'center',
+              borderColor: 'divider',
             }}
           >
-            導入検討ガイド（PDF）をダウンロード
-          </Button>
-        </Paper>
-      </Container>
+            <Typography
+              variant="h5"
+              component="h2"
+              fontWeight="bold"
+              gutterBottom
+            >
+              お役立ち資料
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{ mb: 4, color: 'text.secondary', maxWidth: 600, mx: 'auto' }}
+            >
+              具体的な導入ステップや費用対効果をまとめた資料を無料でダウンロードいただけます。
+              <br />
+              （セグメント2：決裁権者向けの検討材料）
+            </Typography>
+
+            <Button
+              component="a"
+              href="/whitepaper.pdf"
+              download
+              data-gtm-click="resource_btn_whitepaper" // PDFダウンロード計測
+              variant="contained"
+              disableElevation
+              startIcon={<DownloadIcon />}
+              sx={{
+                bgcolor: 'grey.900',
+                color: 'common.white',
+                fontWeight: 'bold',
+                py: 2,
+                px: 4,
+                borderRadius: 2,
+                '&:hover': { bgcolor: grey[800] },
+                textTransform: 'none',
+              }}
+            >
+              導入検討ガイド（PDF）をダウンロード
+            </Button>
+          </Paper>
+        </Container>
+      </Box>
     </>
   );
 }

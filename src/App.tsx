@@ -3,6 +3,7 @@ import Layout from './components/Layout';
 import Home from './pages/';
 import Product from './pages/product/';
 import Cases from './pages/cases/';
+import CaseDetail from './pages/cases/detail';
 import Security from './pages/security/';
 import Trial from './pages/trial/';
 import TrialThanks from './pages/contact/thanks';
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/product/" element={<Product />} />
           <Route path="/cases/" element={<Cases />} />
+          <Route path="/cases/:id" element={<CaseDetail />} />
           <Route path="/security/" element={<Security />} />
           <Route path="/trial/" element={<Trial />} />
           <Route path="/trial/thanks/" element={<TrialThanks />} />

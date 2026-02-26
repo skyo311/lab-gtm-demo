@@ -12,10 +12,10 @@ export default function Contact() {
 
   return (
     <>
-      <title>導入相談・資料請求 | WorkBase（ワークベース）</title>
+      <title>導入相談・資料請求 | Tracking Lab | タスク管理</title>
       <meta
         name="description"
-        content="WorkBaseの導入に関するご相談や、詳しい資料のご請求はこちらのフォームからお問い合わせください。"
+        content="Tracking Labの導入に関するご相談や、詳しい資料のご請求はこちらのフォームからお問い合わせください。"
       />
 
       {/* フォームなので、幅を少し狭め（maxWidth="sm"）にして入力しやすくする */}
@@ -31,15 +31,16 @@ export default function Contact() {
         </Typography>
 
         <Box component="form" onSubmit={handleSubmit} sx={{ mt: 4 }}>
-          {/* MUIのTextFieldでは、HTML標準のカスタムデータ属性（data-gtm-*）を付ける場合、
-            inputProps の中に記述する必要があります。
-          */}
           <TextField
             required
             fullWidth
             label="会社名"
             margin="normal"
-            inputProps={{ 'data-gtm-field': 'contact_company' }}
+            slotProps={{
+              htmlInput: {
+                'data-gtm-field': 'contact_company',
+              },
+            }}
           />
 
           <TextField
@@ -47,7 +48,11 @@ export default function Contact() {
             fullWidth
             label="お名前"
             margin="normal"
-            inputProps={{ 'data-gtm-field': 'contact_name' }}
+            slotProps={{
+              htmlInput: {
+                'data-gtm-field': 'contact_name',
+              },
+            }}
           />
 
           <TextField
@@ -56,8 +61,26 @@ export default function Contact() {
             type="tel"
             placeholder="03-0000-0000"
             margin="normal"
-            inputProps={{ 'data-gtm-field': 'contact_phone' }}
-            helperText="※任意（ハイフンあり・なしどちらでも可）"
+            slotProps={{
+              htmlInput: {
+                'data-gtm-field': 'contact_phone',
+              },
+            }}
+            helperText="※任意（ハイフンなし）"
+          />
+
+          <TextField
+            required
+            fullWidth
+            type="email"
+            label="メールアドレス"
+            margin="normal"
+            placeholder="work@example.com"
+            slotProps={{
+              htmlInput: {
+                'data-gtm-field': 'contact_email',
+              },
+            }}
           />
 
           <Button

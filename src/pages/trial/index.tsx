@@ -12,10 +12,10 @@ export default function Trial() {
 
   return (
     <>
-      <title>無料トライアル | WorkBase（ワークベース）</title>
+      <title>無料トライアルプラン | Tracking Lab | タスク管理</title>
       <meta
         name="description"
-        content="WorkBaseを今すぐ無料で体験。クレジットカード登録不要で、すべての基本機能をお試しいただけます。"
+        content="Tracking Labを今すぐ無料で体験。クレジットカード登録不要で、すべての基本機能をお試しいただけます。"
       />
 
       <Container maxWidth="sm" sx={{ py: 12 }}>
@@ -26,7 +26,7 @@ export default function Trial() {
           align="center"
           gutterBottom
         >
-          無料トライアル
+          無料トライアルプラン
         </Typography>
 
         {/* CVR向上のためのマイクロコピーを追加 */}
@@ -48,11 +48,53 @@ export default function Trial() {
           <TextField
             required
             fullWidth
+            label="会社名"
+            margin="normal"
+            slotProps={{
+              htmlInput: {
+                'data-gtm-field': 'trial_company',
+              },
+            }}
+          />
+
+          <TextField
+            required
+            fullWidth
+            label="お名前"
+            margin="normal"
+            slotProps={{
+              htmlInput: {
+                'data-gtm-field': 'trial_name',
+              },
+            }}
+          />
+
+          <TextField
+            fullWidth
+            label="電話番号"
+            type="tel"
+            placeholder="03-0000-0000"
+            margin="normal"
+            slotProps={{
+              htmlInput: {
+                'data-gtm-field': 'trial_phone',
+              },
+            }}
+            helperText="※任意（ハイフンなし）"
+          />
+
+          <TextField
+            required
+            fullWidth
             type="email"
             label="メールアドレス"
             margin="normal"
             placeholder="work@example.com"
-            inputProps={{ 'data-gtm-field': 'trial_email' }} // 入力離脱計測用
+            slotProps={{
+              htmlInput: {
+                'data-gtm-field': 'trial_email',
+              },
+            }}
           />
 
           <Button

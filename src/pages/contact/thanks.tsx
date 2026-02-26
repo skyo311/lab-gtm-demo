@@ -5,12 +5,12 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'; // 
 export default function ContactThanks() {
   return (
     <>
-      <title>送信完了 | WorkBase（ワークベース）</title>
+      <title>送信完了 | Tracking Lab | タスク管理</title>
       <meta name="description" content="お問い合わせの送信が完了しました。" />
 
       <Container maxWidth="sm" sx={{ py: 12, textAlign: 'center' }}>
         {/* 最終CVタグ発火用ノード（GTM側で「要素の出現」をトリガーにする場合の保険） */}
-        <div data-gtm-cv="generate_lead" style={{ display: 'none' }} />
+        <div data-gtm-view="contact_finish_lead" style={{ display: 'none' }} />
 
         {/* MUIのサクセスアイコンを大きく表示して安心感を与える */}
         <CheckCircleOutlineIcon color="success" sx={{ fontSize: 80, mb: 2 }} />

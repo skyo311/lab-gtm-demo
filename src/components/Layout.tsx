@@ -24,7 +24,7 @@ export default function Layout() {
               letterSpacing: '-0.5px',
             }}
           >
-            WorkBase
+            Tracking Lab
           </Typography>
 
           {/* ナビゲーション部分 */}
@@ -64,7 +64,7 @@ export default function Layout() {
               to="/trial/"
               variant="contained"
               disableElevation
-              data-gtm-click="nav_trial"
+              data-gtm-click="header_btn_trial"
               sx={{
                 bgcolor: 'grey.200',
                 color: 'text.primary',
@@ -81,7 +81,7 @@ export default function Layout() {
               to="/contact/"
               variant="contained"
               disableElevation
-              data-gtm-click="nav_contact"
+              data-gtm-click="header_btn_contact"
               sx={{
                 bgcolor: 'grey.900',
                 color: 'common.white',
