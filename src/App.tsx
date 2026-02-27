@@ -9,23 +9,37 @@ import Trial from './pages/trial/';
 import TrialThanks from './pages/contact/thanks';
 import Contact from './pages/contact/';
 import ContactThanks from './pages/contact/thanks';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import GlobalStyles from '@mui/material/GlobalStyles';
+
+const theme = createTheme();
 
 export default function App() {
   return (
-    <BrowserRouter basename="/lab/gtm-demo">
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/product/" element={<Product />} />
-          <Route path="/cases/" element={<Cases />} />
-          <Route path="/cases/:id" element={<CaseDetail />} />
-          <Route path="/security/" element={<Security />} />
-          <Route path="/trial/" element={<Trial />} />
-          <Route path="/trial/thanks/" element={<TrialThanks />} />
-          <Route path="/contact/" element={<Contact />} />
-          <Route path="/contact/thanks/" element={<ContactThanks />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <GlobalStyles
+        styles={{
+          ul: { margin: 0, padding: 0, listStyle: 'none' },
+          li: { listStyle: 'none' },
+        }}
+      />
+      <BrowserRouter basename="/lab/gtm-demo">
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/product/" element={<Product />} />
+            <Route path="/cases/" element={<Cases />} />
+            <Route path="/cases/:id" element={<CaseDetail />} />
+            <Route path="/security/" element={<Security />} />
+            <Route path="/trial/" element={<Trial />} />
+            <Route path="/trial/thanks/" element={<TrialThanks />} />
+            <Route path="/contact/" element={<Contact />} />
+            <Route path="/contact/thanks/" element={<ContactThanks />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }

@@ -19,6 +19,7 @@ export default function Trial() {
       />
 
       <Container maxWidth="sm" sx={{ py: 12 }}>
+        <div data-gtm-view={`trial_form_arrival`} style={{ display: 'none' }} />
         <Typography
           variant="h4"
           component="h1"
@@ -26,7 +27,7 @@ export default function Trial() {
           align="center"
           gutterBottom
         >
-          無料トライアルプラン
+          無料トライアル
         </Typography>
 
         {/* CVR向上のためのマイクロコピーを追加 */}
@@ -103,6 +104,7 @@ export default function Trial() {
             variant="contained"
             size="large"
             disableElevation
+            data-gtm-click="trial_btn_submit"
             sx={{
               mt: 3,
               py: 2,

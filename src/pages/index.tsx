@@ -36,6 +36,7 @@ export default function Home() {
         <Container maxWidth="md">
           <Typography
             variant="h4"
+            component="h2"
             fontWeight="bold"
             align="center"
             gutterBottom
@@ -48,7 +49,12 @@ export default function Home() {
             {/* 機能1: 実務者（セグメント1）向け */}
             <Grid size={12}>
               <Box sx={{ py: 6, borderBottom: '1px solid #eee' }}>
-                <Typography variant="h5" fontWeight="bold" gutterBottom>
+                <Typography
+                  variant="h5"
+                  component="h3"
+                  fontWeight="bold"
+                  gutterBottom
+                >
                   01. 直感的なタスク操作
                 </Typography>
                 <Typography
@@ -81,7 +87,12 @@ export default function Home() {
             {/* 機能2: 決裁者（セグメント2）向け */}
             <Grid size={12}>
               <Box sx={{ py: 6, borderBottom: '1px solid #eee' }}>
-                <Typography variant="h5" fontWeight="bold" gutterBottom>
+                <Typography
+                  variant="h5"
+                  component="h3"
+                  fontWeight="bold"
+                  gutterBottom
+                >
                   02. 高度なセキュリティと権限管理
                 </Typography>
                 <Typography
@@ -123,6 +134,7 @@ export default function Home() {
         <Container maxWidth="lg">
           <Typography
             variant="h4"
+            component="h2"
             fontWeight="bold"
             align="center"
             gutterBottom
@@ -150,10 +162,20 @@ export default function Home() {
                 elevation={0}
               >
                 <CardContent sx={{ p: 5, flexGrow: 1 }}>
-                  <Typography variant="h6" fontWeight="bold" gutterBottom>
+                  <Typography
+                    variant="h6"
+                    component="h3"
+                    fontWeight="bold"
+                    gutterBottom
+                  >
                     トライアル
                   </Typography>
-                  <Typography variant="h4" fontWeight="900" sx={{ my: 3 }}>
+                  <Typography
+                    variant="h4"
+                    component="p"
+                    fontWeight="900"
+                    sx={{ my: 3 }}
+                  >
                     無料
                   </Typography>
 
@@ -222,10 +244,20 @@ export default function Home() {
                 elevation={4}
               >
                 <CardContent sx={{ p: 5, flexGrow: 1 }}>
-                  <Typography variant="h6" fontWeight="bold" gutterBottom>
+                  <Typography
+                    variant="h6"
+                    component="h3"
+                    fontWeight="bold"
+                    gutterBottom
+                  >
                     エンタープライズ
                   </Typography>
-                  <Typography variant="h4" fontWeight="900" sx={{ my: 3 }}>
+                  <Typography
+                    variant="h4"
+                    component="p"
+                    fontWeight="900"
+                    sx={{ my: 3 }}
+                  >
                     個別見積もり
                   </Typography>
 
@@ -294,6 +326,7 @@ export default function Home() {
         <Container maxWidth="sm">
           <Typography
             variant="h5"
+            component="h2"
             fontWeight="bold"
             align="center"
             gutterBottom

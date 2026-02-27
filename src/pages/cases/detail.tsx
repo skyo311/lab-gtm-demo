@@ -51,6 +51,7 @@ export default function CaseDetail() {
           {/* 2. タイトル：Pageview計測時にIDを含める */}
           <Typography
             variant="h3"
+            component="h1"
             fontWeight="bold"
             gutterBottom
             data-gtm-industry={`case_detail_${company.industry}`}
@@ -81,16 +82,19 @@ export default function CaseDetail() {
 
           {/* 4. 本文セクション：スクロール深度を測るために十分な高さを確保 */}
           <Box sx={{ mb: 10 }}>
-            <Typography variant="h5" fontWeight="bold" gutterBottom>
+            <Typography
+              variant="h5"
+              component="h2"
+              fontWeight="bold"
+              gutterBottom
+            >
               導入前の課題
             </Typography>
             <Typography
               variant="body1"
               sx={{ color: 'text.secondary', lineHeight: 2, mb: 6 }}
             >
-              ワイヤーテキスト：ここから本文が始まります。 スクロール深度（25%,
-              50%, 75%, 100%）が正しく計測されるかを確認するために、
-              意図的に文章量や要素の間隔を調整しています。
+              ワイヤーテキスト：ここから本文が始まります。
             </Typography>
 
             <Box
@@ -109,19 +113,27 @@ export default function CaseDetail() {
               </Typography>
             </Box>
 
-            <Typography variant="h5" fontWeight="bold" gutterBottom>
+            <Typography
+              variant="h5"
+              component="h2"
+              fontWeight="bold"
+              gutterBottom
+            >
               Tracking Labによる解決
             </Typography>
             <Typography
               variant="body1"
               sx={{ color: 'text.secondary', lineHeight: 2, mb: 6 }}
             >
-              中盤のセクションです。ここが画面中央に来た時に 50%
-              スクロールが発火する想定です。
-              UIのシンプルさと、GTM連携による計測のしやすさが採用の決め手となりました。
+              中盤のセクションです。
             </Typography>
 
-            <Typography variant="h5" fontWeight="bold" gutterBottom>
+            <Typography
+              variant="h5"
+              component="h2"
+              fontWeight="bold"
+              gutterBottom
+            >
               導入後の成果
             </Typography>
             <Typography
@@ -137,7 +149,12 @@ export default function CaseDetail() {
 
           {/* 5. 読了・CTAセクション：下部到達の計測 */}
           <Box sx={{ textAlign: 'center', py: 6 }}>
-            <Typography variant="h5" fontWeight="bold" gutterBottom>
+            <Typography
+              variant="h5"
+              component="h2"
+              fontWeight="bold"
+              gutterBottom
+            >
               {company.name}の事例は参考になりましたか？
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 4 }}>

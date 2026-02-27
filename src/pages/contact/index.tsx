@@ -20,6 +20,10 @@ export default function Contact() {
 
       {/* フォームなので、幅を少し狭め（maxWidth="sm"）にして入力しやすくする */}
       <Container maxWidth="sm" sx={{ py: 8 }}>
+        <div
+          data-gtm-view={`contact_form_arrival`}
+          style={{ display: 'none' }}
+        />
         <Typography
           variant="h4"
           component="h1"
@@ -89,6 +93,7 @@ export default function Contact() {
             variant="contained"
             size="large"
             disableElevation
+            data-gtm-click={`contact_btn_submit`}
             sx={{
               mt: 4,
               py: 2,

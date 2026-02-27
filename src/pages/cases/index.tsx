@@ -47,9 +47,13 @@ export default function Cases() {
               企業別ケーススタディ
             </Typography>
 
-            <Grid container spacing={3}>
+            <Grid container spacing={3} component="ul">
               {COMPANIES.map((company) => (
-                <Grid size={{ xs: 12, sm: 6, md: 3 }} key={company.id}>
+                <Grid
+                  size={{ xs: 12, sm: 6, md: 3 }}
+                  key={company.id}
+                  component="li"
+                >
                   <Card
                     variant="outlined"
                     sx={{
@@ -69,6 +73,7 @@ export default function Cases() {
                         />
                         <Typography
                           variant="subtitle1"
+                          component="h3"
                           fontWeight="bold"
                           gutterBottom
                         >
