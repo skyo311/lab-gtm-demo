@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Container, Typography, TextField, Button } from '@mui/material';
 
@@ -10,6 +11,18 @@ export default function Trial() {
     navigate('/trial/thanks/');
   };
 
+  useEffect(() => {
+    const _window = window as any;
+    _window.dataLayer = _window.dataLayer || [];
+
+    _window.dataLayer.push({
+      event: 'view_form_step',
+      form_name: 'trial',
+      step: 'arrival',
+      page_type: 'form',
+    });
+  }, []); // 初回レンダリング時のみ実行
+
   return (
     <>
       <title>無料トライアルプラン | Tracking Lab | タスク管理</title>
@@ -19,7 +32,6 @@ export default function Trial() {
       />
 
       <Container maxWidth="sm" sx={{ py: 12 }}>
-        <div data-gtm-view={`trial_form_arrival`} style={{ display: 'none' }} />
         <Typography
           variant="h4"
           component="h1"

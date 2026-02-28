@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   Box,
@@ -23,6 +24,21 @@ export default function CaseDetail() {
       </Box>
     );
   }
+
+  useEffect(() => {
+    // window.dataLayerが存在することを確認（TypeScriptエラー防止）
+    window.dataLayer = window.dataLayer || [];
+
+    window.dataLayer.push({
+      event: 'view_case_detail', // GTMのトリガー名に使用
+      industry: company.industry, // 業界カテゴリ
+      case_id: company.id, // 事例ID
+      page_type: 'case_detail', // 分析時のフィルタリング用
+    });
+
+    // 依存配列に company.id を指定することで、
+    // 別の事例に遷移した際も正しく再発火するようにします
+  }, [company.id]);
 
   return (
     <>
@@ -54,7 +70,6 @@ export default function CaseDetail() {
             component="h1"
             fontWeight="bold"
             gutterBottom
-            data-gtm-industry={`case_detail_${company.industry}`}
           >
             {company.name} 導入事例
           </Typography>

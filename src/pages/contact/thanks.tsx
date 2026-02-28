@@ -1,17 +1,26 @@
+import { useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Container, Typography, Button } from '@mui/material';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'; // 完了を示すチェックアイコン
 
 export default function ContactThanks() {
+  useEffect(() => {
+    const _window = window as any;
+    _window.dataLayer = _window.dataLayer || [];
+
+    _window.dataLayer.push({
+      event: 'view_form_step',
+      form_name: 'contact',
+      step: 'completion',
+      page_type: 'thanks',
+    });
+  }, []); // 初回レンダリング時のみ実行
   return (
     <>
       <title>送信完了 | Tracking Lab | タスク管理</title>
       <meta name="description" content="お問い合わせの送信が完了しました。" />
 
       <Container maxWidth="sm" sx={{ py: 12, textAlign: 'center' }}>
-        {/* 最終CVタグ発火用ノード（GTM側で「要素の出現」をトリガーにする場合の保険） */}
-        <div data-gtm-view="contact_finish_lead" style={{ display: 'none' }} />
-
         {/* MUIのサクセスアイコンを大きく表示して安心感を与える */}
         <CheckCircleOutlineIcon color="success" sx={{ fontSize: 80, mb: 2 }} />
 

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Container, Typography, TextField, Button } from '@mui/material';
 
@@ -10,6 +11,18 @@ export default function Contact() {
     navigate('/contact/thanks/');
   };
 
+  useEffect(() => {
+    const _window = window as any;
+    _window.dataLayer = _window.dataLayer || [];
+
+    _window.dataLayer.push({
+      event: 'view_form_step',
+      form_name: 'contact',
+      step: 'arrival',
+      page_type: 'form',
+    });
+  }, []); // 初回レンダリング時のみ実行
+
   return (
     <>
       <title>導入相談・資料請求 | Tracking Lab | タスク管理</title>
@@ -20,10 +33,6 @@ export default function Contact() {
 
       {/* フォームなので、幅を少し狭め（maxWidth="sm"）にして入力しやすくする */}
       <Container maxWidth="sm" sx={{ py: 8 }}>
-        <div
-          data-gtm-view={`contact_form_arrival`}
-          style={{ display: 'none' }}
-        />
         <Typography
           variant="h4"
           component="h1"

@@ -1,8 +1,21 @@
+import { useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Container, Typography, Button } from '@mui/material';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 export default function TrialThanks() {
+  useEffect(() => {
+    const _window = window as any;
+    _window.dataLayer = _window.dataLayer || [];
+
+    _window.dataLayer.push({
+      event: 'view_form_step',
+      form_name: 'trial',
+      step: 'completion',
+      page_type: 'thanks',
+    });
+  }, []); // 初回レンダリング時のみ実行
+
   return (
     <>
       <title>登録完了 | Tracking Lab | タスク管理</title>
@@ -12,10 +25,7 @@ export default function TrialThanks() {
       />
 
       <Container maxWidth="sm" sx={{ py: 12, textAlign: 'center' }}>
-        <div data-gtm-view="trial_finish_lead" style={{ display: 'none' }} />
-
         <CheckCircleOutlineIcon color="primary" sx={{ fontSize: 80, mb: 2 }} />
-
         <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>
           登録完了
         </Typography>
