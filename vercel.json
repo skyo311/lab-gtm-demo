@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/lab/gtm-demo/(.*)",
-      "destination": "/lab/gtm-demo/index.html"
+      "destination": "/lab/gtm-demo/"
     }
   ]
 }
