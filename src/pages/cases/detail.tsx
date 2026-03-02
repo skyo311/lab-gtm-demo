@@ -177,9 +177,11 @@ export default function CaseDetail() {
             </Typography>
 
             <Button
+              component="a"
+              href="/whitepaper.pdf"
               variant="contained"
               size="large"
-              data-gtm-click={'resource_btn_whitepaper'} // PDFダウンロード計測
+              data-gtm-download={'resource_btn_whitepaper'} // PDFダウンロード計測
               sx={{
                 bgcolor: 'grey.900',
                 color: 'common.white',

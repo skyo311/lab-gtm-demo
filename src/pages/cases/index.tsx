@@ -124,7 +124,7 @@ export default function Cases() {
               component="a"
               href="/whitepaper.pdf"
               download
-              data-gtm-click="resource_btn_whitepaper" // PDFダウンロード計測
+              data-gtm-download="resource_btn_whitepaper" // PDFダウンロード計測
               variant="contained"
               disableElevation
               startIcon={<DownloadIcon />}

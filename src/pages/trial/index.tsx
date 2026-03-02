@@ -116,7 +116,7 @@ export default function Trial() {
             variant="contained"
             size="large"
             disableElevation
-            data-gtm-click="trial_btn_submit"
+            data-gtm-field="trial_btn_submit"
             sx={{
               mt: 3,
               py: 2,

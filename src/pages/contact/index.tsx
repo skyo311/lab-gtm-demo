@@ -102,7 +102,7 @@ export default function Contact() {
             variant="contained"
             size="large"
             disableElevation
-            data-gtm-click={`contact_btn_submit`}
+            data-gtm-field={`contact_btn_submit`}
             sx={{
               mt: 4,
               py: 2,
