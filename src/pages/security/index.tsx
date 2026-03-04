@@ -38,6 +38,7 @@ export default function Security() {
             variant="body2"
             color="text.secondary"
             sx={{ lineHeight: 1.8 }}
+            data-gtm-view="security_section_content"
           >
             {/* 長文のセキュリティ要件ダミー */}
             詳細なデータ暗号化方式やバックアップ体制について...
