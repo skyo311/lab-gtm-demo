@@ -6,7 +6,7 @@ import Cases from './pages/cases/';
 import CaseDetail from './pages/cases/detail';
 import Security from './pages/security/';
 import Trial from './pages/trial/';
-import TrialThanks from './pages/contact/thanks';
+import TrialThanks from './pages/trial/thanks';
 import Contact from './pages/contact/';
 import ContactThanks from './pages/contact/thanks';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
