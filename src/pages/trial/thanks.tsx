@@ -8,6 +8,8 @@ export default function TrialThanks() {
     const _window = window as any;
     _window.dataLayer = _window.dataLayer || [];
 
+    console.log('🔥 トライアルのdataLayerを送信します！', _window.dataLayer);
+
     _window.dataLayer.push({
       event: 'view_form_step',
       form_name: 'trial',
